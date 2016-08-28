@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="88dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/movie_poster_image_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/movie_poster"/>
+        android:contentDescription="@string/movie_poster"
+        android:adjustViewBounds="true"/>
 
 </LinearLayout>
