@@ -53,12 +53,17 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
             public void onClick(View view) {
                 Intent deatilMovieIntent = new Intent(getContext(), MovieDetail.class);
 
+                //set the movie released to just the year
+                String releasedFull = currentMovie.getmReleaseDate();
+                String[] releasedSplit = releasedFull.split("-");
+
+
                 //add the movie information into a bundle
                 Bundle bundle = new Bundle();
                 bundle.putString("movie_title", currentMovie.getmMovieTitle());
                 bundle.putString("movie_poster_path", currentMovie.getmMoviePosterPath());
                 bundle.putString("movie_overview", currentMovie.getmMovieOverview());
-                bundle.putString("movie_release_date", currentMovie.getmReleaseDate());
+                bundle.putString("movie_release_date", releasedSplit[0]);
                 bundle.putFloat("movie_rating", currentMovie.getmVoteAverage());
 
                 //add the bundle to the intent
